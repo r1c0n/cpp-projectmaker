@@ -6,12 +6,13 @@
 #include "color_codes.h"
 
 int main() {
+
     std::string project_name;
     std::string directory;
 
-    std::cout << Blue << "Enter the name of your project: " << Reset;
+    std::cout << Bright_Blue << "Enter the name of your project: " << Reset;
     std::getline(std::cin, project_name);
-    std::cout << Blue << "Enter the directory where you want to create the project: " << Reset;
+    std::cout << Bright_Blue << "Enter the directory where you want to create the project: " << Reset;
     std::getline(std::cin, directory);
 
     // check for special characters and spaces in project name
@@ -23,12 +24,12 @@ int main() {
     auto start_time = std::chrono::system_clock::now();
 
     // create directory
-    std::cout << Blue << "Creating directory..." << Reset << std::endl;
+    std::cout << Bright_Blue << "Creating directory..." << Reset << std::endl;
     std::filesystem::create_directory(directory + "/" + project_name);
     std::cout << Green << "Directory created." << Reset << std::endl;
 
     // create main.cpp file
-    std::cout << Blue << "Creating main.cpp file...\n" << Reset;
+    std::cout << Bright_Blue << "Creating main.cpp file...\n" << Reset;
     std::ofstream main_file(directory + "/" + project_name + "/main.cpp");
     main_file << "#include <iostream>" << std::endl << std::endl;
     main_file << "int main() {" << std::endl;
@@ -39,7 +40,7 @@ int main() {
     std::cout << Green << "main.cpp file created." << Reset << std::endl;
 
     // create makefile
-    std::cout << Blue << "Creating makefile...\n" << Reset;
+    std::cout << Bright_Blue << "Creating makefile...\n" << Reset;
     std::ofstream makefile(directory + "/" + project_name + "/makefile");
     makefile << "CC = g++" << std::endl;
     makefile << "CFLAGS = -std=c++17" << std::endl << std::endl;
