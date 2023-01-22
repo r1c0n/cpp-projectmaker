@@ -7,7 +7,7 @@ int main() {
     std::string project_name;
     std::string directory;
 
-    std::cout << "enter the name of your project: ";
+    std::cout << "Enter the name of your project: ";
     std::getline(std::cin, project_name);
     std::cout << "Enter the directory where you want to create the project: ";
     std::getline(std::cin, directory);
