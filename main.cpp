@@ -3,9 +3,12 @@
 #include <filesystem>
 #include <fstream>
 #include <chrono>
+#include <Windows.h>
 #include "color_codes.h"
 
 int main() {
+    // set window title
+    SetConsoleTitle("C++ Project Maker");
 
     std::string project_name;
     std::string directory;
