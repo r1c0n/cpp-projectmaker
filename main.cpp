@@ -32,7 +32,7 @@ int main() {
     std::ofstream main_file(directory + "/" + project_name + "/main.cpp");
     main_file << "#include <iostream>" << std::endl << std::endl;
     main_file << "int main() {" << std::endl;
-    main_file << "    std::cout << \"This is placeholder code for the C++ project maker.\";" << std::endl;
+    main_file << "    std::cout << \"This is placeholder code for the C++ project maker. Feel free to add on to this code, or delete this code and start from scratch.\";" << std::endl;
     main_file << "    return 0;" << std::endl;
     main_file << "}" << std::endl;
     main_file.close();
