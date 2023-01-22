@@ -16,19 +16,19 @@ int main() {
 
     // check for special characters and spaces in project name
     if (project_name.find_first_of("!@#$%^&*()[]{}<>,.?/\\\"\' ") != std::string::npos) {
-        std::cout << "ERROR: Project name cannot contain special characters or spaces." << std::endl;
+        std::cout << Red << "ERROR: Project name cannot contain special characters or spaces." << Reset << std::endl;
         return 1;
     }
 
     auto start_time = std::chrono::system_clock::now();
 
     // create directory
-    std::cout << "Creating directory..." << std::endl;
+    std::cout << Blue << "Creating directory..." << Reset << std::endl;
     std::filesystem::create_directory(directory + "/" + project_name);
-    std::cout << "Directory created." << std::endl;
+    std::cout << Green << "Directory created." << Reset << std::endl;
 
     // create main.cpp file
-    std::cout << "Creating main.cpp file...\n";
+    std::cout << Blue << "Creating main.cpp file...\n" << Reset;
     std::ofstream main_file(directory + "/" + project_name + "/main.cpp");
     main_file << "#include <iostream>" << std::endl << std::endl;
     main_file << "int main() {" << std::endl;
@@ -36,21 +36,21 @@ int main() {
     main_file << "    return 0;" << std::endl;
     main_file << "}" << std::endl;
     main_file.close();
-    std::cout << "main.cpp file created." << std::endl;
+    std::cout << Green << "main.cpp file created." << Reset << std::endl;
 
     // create makefile
-    std::cout << "Creating makefile...\n";
+    std::cout << Blue << "Creating makefile...\n" << Reset;
     std::ofstream makefile(directory + "/" + project_name + "/makefile");
     makefile << "CC = g++" << std::endl;
     makefile << "CFLAGS = -std=c++17" << std::endl << std::endl;
     makefile << project_name + ".exe: main.cpp" << std::endl;
     makefile << "    $(CC) $(CFLAGS) -o " + project_name + ".exe main.cpp" << std::endl;
     makefile.close();
-    std::cout << "makefile created." << std::endl;
+    std::cout << Green << "makefile created." << Reset << std::endl;
 
     auto end_time = std::chrono::system_clock::now();
     std::chrono::duration<double> elapsed_seconds = end_time - start_time;
-    std::cout << "Process finished in " << elapsed_seconds.count() << "s!" << std::endl;
+    std::cout << Yellow << "Process finished in " << elapsed_seconds.count() << "s!" << Reset << std::endl;
 
     return 0;
 }
