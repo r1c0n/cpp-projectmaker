@@ -2,6 +2,8 @@
 #include <string>
 #include <filesystem>
 #include <fstream>
+#include <chrono>
+#include "color_codes.h"
 
 int main() {
     std::string project_name;
@@ -14,9 +16,11 @@ int main() {
 
     // check for special characters and spaces in project name
     if (project_name.find_first_of("!@#$%^&*()[]{}<>,.?/\\\"\' ") != std::string::npos) {
-        std::cout << "Error: Project name cannot contain special characters or spaces." << std::endl;
+        std::cout << "ERROR: Project name cannot contain special characters or spaces." << std::endl;
         return 1;
     }
+
+    auto start_time = std::chrono::system_clock::now();
 
     // create directory
     std::cout << "Creating directory..." << std::endl;
@@ -43,6 +47,10 @@ int main() {
     makefile << "    $(CC) $(CFLAGS) -o " + project_name + ".exe main.cpp" << std::endl;
     makefile.close();
     std::cout << "makefile created." << std::endl;
+
+    auto end_time = std::chrono::system_clock::now();
+    std::chrono::duration<double> elapsed_seconds = end_time - start_time;
+    std::cout << "Process finished in " << elapsed_seconds.count() << "s!" << std::endl;
 
     return 0;
 }
