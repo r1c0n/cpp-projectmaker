@@ -33,7 +33,7 @@ Or, download the executable file from the [releases page](https://github.com/r1c
 - Inspiration for this project came from the frustration of manually creating a new project every time and having to set up the same basic files and directories.
 
 ## License
-This program is licensed undeer the GNU General Public License v3.0.
+This program is licensed under the GNU General Public License v3.0.
 
 C++ Project Maker - A simple C++ project generator.
 Copyright (C) 2023  r1c0n
