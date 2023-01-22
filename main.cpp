@@ -9,9 +9,9 @@ int main() {
     std::string project_name;
     std::string directory;
 
-    std::cout << "Enter the name of your project: ";
+    std::cout << Blue << "Enter the name of your project: " << Reset;
     std::getline(std::cin, project_name);
-    std::cout << "Enter the directory where you want to create the project: ";
+    std::cout << Blue << "Enter the directory where you want to create the project: " << Reset;
     std::getline(std::cin, directory);
 
     // check for special characters and spaces in project name
