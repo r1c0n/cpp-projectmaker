@@ -4,7 +4,7 @@
 #include <fstream>
 #include <chrono>
 #include <Windows.h>
-#include "color_codes.h"
+#include "inc/color_codes.h"
 
 int main() {
     // set window title
