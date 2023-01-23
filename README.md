@@ -27,6 +27,8 @@ Or, download the executable file from the [releases page](https://github.com/r1c
 ## Authors
 
 - r1c0n
+- Logo designer: iconixar
+- Logo font author: The Refinery
 
 ## Acknowledgments
 
