@@ -1,3 +1,6 @@
+# vscode config files
 .vscode/
+# version archive
 dist/
+# project maker file for testing (see releases)
 bin/
