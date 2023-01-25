@@ -24,6 +24,12 @@ int main() {
         return 1;
     }
 
+    // secret debug stuff
+    if (directory == "debug.reset") {
+        std::cout << Reset << "Job complete";
+        return 0;
+    }
+
     auto start_time = std::chrono::system_clock::now();
 
     // create directory
